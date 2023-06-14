@@ -1,0 +1,146 @@
+.bannerBtn {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.banner {
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  align-items: center;
+  background-color: white;
+}
+
+.todo_container {
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  align-items: center;
+}
+
+.tab {
+  color: rgb(203, 170, 254);
+  font-weight: bolder;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 100px;
+  border-radius: 10px;
+  margin-left: 3rem;
+  background: white;
+  box-shadow: 5px 5px 20px lightgray;
+}
+
+.tab:first-child {
+  margin-left: 5rem;
+}
+
+.todo_leftSide {
+  margin-top: 6rem;
+}
+
+.Todos {
+  width: 35rem;
+  border-radius: 10px;
+  margin-left: 5rem;
+  margin-top: 10rem;
+  margin-bottom: 50px;
+  box-shadow: 5px 5px 20px lightgray;
+}
+
+.Todos h1 {
+  text-align: center;
+  padding: 30px 0;
+  background: rgb(203, 170, 254);
+  font-size: 30px;
+  color: white;
+  margin-top: 0;
+  border-radius: 10px 10px 50% 50%;
+  font-family: "oneFontTitle";
+}
+
+/* 아래 코드는 calendar에 대한 css입니다. */
+.calendar-parent {
+  /* 월-일(요일) 색깔 */
+  color: black;
+}
+
+.react-calendar {
+  border-radius: 1rem;
+  margin: 2rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 20px lightgray;
+}
+
+.sundayTile {
+  color: red;
+}
+
+.saturdayTile {
+  color: blue;
+}
+
+.currentMonthTile {
+  padding: 5px;
+  padding-bottom: 1rem;
+}
+
+/* navigation 부분 */
+.react-calendar__navigation button {
+  /* color: #6f48eb; */
+  min-width: 100px;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* navigation부분 hover했을 때 */
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background-color: #f8f8fa;
+}
+
+/* 요일 부분 */
+abbr[title] {
+  text-decoration: none;
+}
+
+/* 오늘 날짜 */
+.react-calendar__tile--now {
+  background-color: pink;
+}
+
+.react-calendar__navigation__label > span {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* 요일 부분 */
+.react-calendar__month-view__weekdays {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* 각 날짜 부분 */
+.react-calendar__tile {
+  /* border: 0.5px solid rgb(226, 226, 226); */
+  text-align: center;
+}
+
+.react-calendar__tile:enabled:hover {
+  background-color: #f8f8fa;
+}
+
+.react-calendar__tile:enabled:focus {
+  background-color: rgb(203, 170, 254);
+}

@@ -1,0 +1,11 @@
+  .main_best1{
+    min-width:282px;
+    margin:20px;
+  }
+  .main_text1>h2{
+    font-family: "oneFontTitle";
+  }
+  .main_img1{
+    height:330px;
+    background-color: gray;
+  }

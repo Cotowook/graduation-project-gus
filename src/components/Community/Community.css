@@ -1,0 +1,66 @@
+.Community{
+    background-color:#ffff;
+    width:100%;
+    height:100%;
+}
+.c_header{
+  width:100%;
+    height:60px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0;
+    margin:0;
+}
+/*맨위 메인 내글 쇼핑몰 투두는 나중에 옆에 클릭하면 열리는 식으로 감*/
+
+
+   
+
+    .a_li{
+        height:40px;
+    margin-top:10px;
+    }
+
+.c_left{
+   
+    height:60px;
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+}
+.c_logo{
+
+   
+    height:60px;
+}
+
+.c_center{
+    width:45%;
+    display:flex;
+    justify-content: center; 
+    font-family: oneFont;
+}
+.c_input{
+  
+    background-color: white;
+    height:30px;
+    width:400px;
+  
+    border-right: 0px;
+    border-top: 0px;
+    border-left: 0px;
+}
+.c_button{
+   
+    background-color: white;
+    height:30px;
+    border:0px;
+}
+.c_right{
+    display:flex;
+           align-items: center;
+      width:15%;
+      justify-content: space-around;
+}
