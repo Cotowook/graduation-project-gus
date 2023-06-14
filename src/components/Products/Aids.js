@@ -37,9 +37,13 @@ const Aids=()=>{
                 <Route path="Golf" element={<Golf/>}></Route>
                 <Route path="Yoga" element={<Yoga/>}></Route>
             </Routes>
-            <div className="rap_next">
-    <button>이전</button><div>12345</div><button>다음</button>
-    </div>
+            <div class="pagination-box">
+        <a className="paging_btn">1</a>
+        <a className="paging_btn">2</a>
+        <a className="paging_btn">3</a>
+        <a className="paging_btn">4</a>
+      </div>
+
         </div>
     );
 }

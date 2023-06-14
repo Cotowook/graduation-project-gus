@@ -55,6 +55,7 @@ const toggleMe =()=>{
      navigate(`/Products/SearchResults/${itemName}`);
    }
  };
+
  const handleChange = (event) => {
      setItemName(event.target.value);
  };

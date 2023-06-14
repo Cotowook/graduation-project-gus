@@ -1,5 +1,4 @@
 import React from "react";
-import './Community.css';
 import logo from '../img/mainlogo.jpg';
 import {Link,Route,Routes} from 'react-router-dom';
 import {FiSearch} from "react-icons/fi";

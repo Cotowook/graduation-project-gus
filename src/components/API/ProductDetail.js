@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect,useState} from 'react';
 import { getItems, getItemsImage } from './ItemAPI';
-import { useNavigate } from 'react-router-dom';
 
-function ProductDetail({ itemId }) {
+const ProductDetail = ({ itemId }) => {
   const [item, setItem] = useState(null);
   const [imageUrl, setImageUrl] = useState(null);
-  const navigate = useNavigate();
 
   useEffect(() => {
     fetchItemData();
-  }, []);
+  }, [itemId]);
 
   const fetchItemData = async () => {
     try {
@@ -18,64 +16,66 @@ function ProductDetail({ itemId }) {
       setItem(itemData);
       setImageUrl(itemImageUrl);
     } catch (error) {
-      console.error('Error fetching item data:', error);
+      console.error('아이템 데이터를 가져오는 중 에러 발생:', error);
     }
   };
 
-  const [count, setCount] = useState(0);
-  const [price, setPrice] = useState(0);
-  const [totalPrice, setTotalPrice] = useState(0);
-
-  useEffect(() => {
-    calculateTotalPrice();
-  }, [count]);
-
-  const calculateTotalPrice = () => {
-    const totalCount = Number(count);
-    const itemPrice = Number(price);
-    const calculatedPrice = totalCount * itemPrice;
-    setTotalPrice(calculatedPrice);
-  };
-
   const order = () => {
-    const url = "/order";
-    const paramData = {
-      itemId: itemId,
-      count: count
-    };
-
+    // 주문하기 함수의 구현
   };
 
   const addCart = () => {
-    const url = "/cart";
-    const paramData = {
-      itemId: itemId,
-      count: count
-    };
-  };
-
-  const handleImageClick = () => {
-    navigate(`/Products/manpants/${itemId}`);
+    // 장바구니 담기 함수의 구현
   };
 
   if (!item) {
-    return <div>Loading...</div>;
+    return null; // 아이템 데이터가 없을 경우 아무 것도 렌더링하지 않음
   }
 
   return (
-    <div>
-      <img src={imageUrl} alt="Item Image" onClick={handleImageClick} />
-      <h2>{item.name}</h2>
-      <p>{item.description}</p>
-      <input type="number" id="count" value={count} onChange={event => setCount(event.target.value)} />
-      <input type="number" id="price" value={price} onChange={event => setPrice(event.target.value)} />
-      <div id="totalPrice">{totalPrice}원</div>
-      <button onClick={calculateTotalPrice}>Calculate Total Price</button>
-      <button onClick={order}>Order</button>
-      <button onClick={addCart}>Add to Cart</button>
+    <div className="d-flex">
+      <div className="repImgDiv">
+        <img src={imageUrl} className="rounded repImg" alt={item.itemNm} />
+      </div>
+      <div className="wd50">
+        <div className="h4">{item.itemNm}</div>
+        <hr className="my-4" />
+
+        <div className="text-right">
+          <div className="h4 text-danger text-left">
+            <input type="hidden" value={item.price} id="price" name="price" />
+            {item.price}원
+          </div>
+          <div className="input-group w-50">
+            <div className="input-group-prepend">
+              <span className="input-group-text">수량</span>
+            </div>
+            <input type="number" name="count" id="count" className="form-control" value="1" min="1" />
+          </div>
+        </div>
+        <hr className="my-4" />
+
+        <div className="text-right mgt-50">
+          <h5>결제 금액</h5>
+          <h3 name="totalPrice" id="totalPrice" className="font-weight-bold"></h3>
+        </div>
+
+          <div className="text-right">
+            <button type="button" className="btn btn-light border border-primary btn-lg" onClick={addCart}>
+              장바구니 담기
+            </button>
+            <button type="button" className="btn btn-primary btn-lg" onClick={order}>
+              주문하기
+            </button>
+          </div>
+        ) : (
+          <div className="text-right">
+            <button type="button" className="btn btn-danger btn-lg">품절</button>
+          </div>
+        )}
+      </div>
     </div>
   );
-}
+};
+
 export default ProductDetail;
-
-
